@@ -9,8 +9,8 @@ Simple flow can be explained as follows:
 * Choose the best fit for binary image processing
 * Perform thresholding and some morphological operations
 * Perform simple blob detection using `cv::SimpleBlobDetector`
-* Perform connected component analysis and use color mapping
-* Perform contour analysis
+* Perform connected component analysis `cv::connectedComponenets` and use color mapping using `cv::applyColorMap`
+* Perform contour analysis using `cv::findContours`
 
 
 
