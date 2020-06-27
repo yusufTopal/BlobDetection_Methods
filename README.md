@@ -4,3 +4,4 @@ The code snippet illustrates SimpleBlobDetection, ConnectedComponentAnalysis and
 The main objective here is to get practical experience with the methods mentinoed above.
 
 
+![Contour Analysis](/Results/contourAnalysis.png)
