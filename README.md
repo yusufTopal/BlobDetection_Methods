@@ -13,6 +13,11 @@ Simple flow can be explained as follows:
 * Perform contour analysis
 
 
-                        Contour A
 
+# Input Image
+ 
+![Source Image](/CoinsA.png "Source Image")
+
+# One of the output images:
+ 
 ![Contour Analysis](/Results/contourAnalysis.png "Contour Analysis")
