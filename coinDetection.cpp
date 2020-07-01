@@ -146,4 +146,41 @@ int main()
         circle(circleFittedImage, center, enclosingCircleradius, Scalar(0, 255, 0), 2);
     }
         imshow("CoM and Enclosing Circle",circleFittedImage);
+    waitKey(0);
+    destroyAllWindows();
+    return 0;
+}
+Mat displayConnectedComponents(Mat &im)
+{
+
+    Mat imLabels = im.clone();
+    Point minLoc, maxLoc;
+    double min, max;
+
+    minMaxLoc(imLabels, &min, &max, &minLoc, &maxLoc); //find min max pixel values and their loc.
+
+    imLabels = 255 * (imLabels - min) / (max - min);
+
+    imLabels.convertTo(imLabels, CV_8U);
+
+    Mat imColorMap;
+    applyColorMap(imLabels, imColorMap, COLORMAP_JET);
+
+    return imColorMap;
+}
+int getLargestContour(vector<vector<Point>> contours)
+{
+
+    int largestContourId = 0;
+    double largestContourArea = 0;
+    for (int i = 0; i < contours.size(); i++)
+    {
+        double tempArea = contourArea(contours[i]);
+        if (tempArea > largestContourArea)
+        {
+            largestContourArea = tempArea;
+            largestContourId = i;
+        }
+    }
+    return largestContourId;
 }
